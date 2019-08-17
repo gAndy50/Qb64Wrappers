@@ -16,7 +16,7 @@ This software is provided as-is. There is no warranty for this software. You use
 # Examples
 1. Sigil Example
 
-```BASIC
+```VB
 REM $include: 'sigil.bi'
 
 CALL slWindow(640, 480, "Hello - Press arrow keys to change Backdrop color!", slFALSE)
