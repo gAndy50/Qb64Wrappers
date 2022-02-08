@@ -1,5 +1,5 @@
-# Qb64Wrappers
-Wrappers for QB64!
+# Qb64Wrappers/ThinBasic
+Wrappers for QB64 & ThinBasic!
 
 # About
 This repo will provide a wrappers for various libraries using the QB64 programming language. All wrappers written by Andy P. unless otherwise stated. 
@@ -36,4 +36,24 @@ DO
 LOOP UNTIL slGetKey(SL_KEY_ESCAPE)
 
 slClose
+```
+
+2. Thinbasic Example
+3. ```Basic
+4. Function TBMain()
+
+slWindow(800,600,"Hello",0)
+
+while not slShouldClose()
+
+if slGetKey(SL_KEY_ESCAPE) = 1 then
+  slClose()
+endif
+
+slRender()
+wend
+
+slClose()
+WaitKey
+End Function
 ```
