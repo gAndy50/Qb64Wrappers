@@ -39,6 +39,7 @@ slClose
 ```
 
 ```VB
+'ThinBasic Example
 Function TBMain()
 
 slWindow(800,600,"Hello",0)
