@@ -38,9 +38,8 @@ LOOP UNTIL slGetKey(SL_KEY_ESCAPE)
 slClose
 ```
 
-2. Thinbasic Example
-3. ```Basic
-4. Function TBMain()
+```VB
+Function TBMain()
 
 slWindow(800,600,"Hello",0)
 
