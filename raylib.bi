@@ -10,6 +10,9 @@
 'Note: Audio functions are wrapped, but not in the raylib.DLL
 'Hence why they are commented out
 
+'OUTDATED as of 8-25-255
+'PLEASE USE RAYlib42.BI !!!
+
 REM $include: 'raylibflags.bi'
 
 $IF WIN OR LIN THEN
