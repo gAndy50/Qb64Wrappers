@@ -1,7 +1,7 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''
 'Sigil Basic                                       ''
 'Written by Andy P. (Icy_Viking)                   ''
-'QB64 Ver: 1.3                                     ''
+'QB64 Ver: 1.5                                     ''
 'Sigil Ver: 0.9.0                                  ''
 'Icy Viking Games                                  ''
 'Contact/Paypal: g_andy <at> live.com              ''
@@ -102,13 +102,13 @@ CONST SL_FALSE = 0
 $IF WIN OR LIN THEN
     DECLARE DYNAMIC LIBRARY "sigil"
         'Init Commands
-        SUB slWindow (BYVAL xwidth AS INTEGER, BYVAL xheight AS INTEGER, title AS STRING, BYVAL fullScr AS INTEGER)
-        SUB slShowCursor (BYVAL show AS INTEGER)
+        SUB slWindow (BYVAL xwidth AS LONG, BYVAL xheight AS LONG, title AS STRING, BYVAL fullScr AS LONG)
+        SUB slShowCursor (BYVAL show AS LONG)
         SUB slClose ()
         FUNCTION slShouldClose& ()
         'Input Commands
-        FUNCTION slGetKey& (BYVAL xkey AS INTEGER)
-        FUNCTION slGetMouseButton& (BYVAL btn AS INTEGER)
+        FUNCTION slGetKey& (BYVAL xkey AS LONG)
+        FUNCTION slGetMouseButton& (BYVAL btn AS LONG)
         FUNCTION slGetMouseX& ()
         FUNCTION slGetMouseY& ()
         'Simple Timing commands
@@ -120,7 +120,7 @@ $IF WIN OR LIN THEN
         SUB slSetBackColor (BYVAL r AS DOUBLE, BYVAL g AS DOUBLE, BYVAL b AS DOUBLE)
         SUB slSetForeColor (BYVAL r AS DOUBLE, BYVAL g AS DOUBLE, BYVAL b AS DOUBLE)
         'Blending Command
-        SUB slSetAdditiveBlend (BYVAL blend AS INTEGER)
+        SUB slSetAdditiveBlend (BYVAL blend AS LONG)
         'Transformation Commands
         SUB slPush ()
         SUB slPop ()
@@ -131,36 +131,36 @@ $IF WIN OR LIN THEN
         FUNCTION slLoadTexture& (filename AS STRING)
         'Sound Loading/Playing Commands
         FUNCTION slLoadWAV& (filename AS STRING)
-        FUNCTION slSoundPlay& (BYVAL snd AS INTEGER)
-        FUNCTION slSoundLoop (BYVAL snd AS INTEGER)
-        SUB slSoundPause (BYVAL snd AS INTEGER)
-        SUB slSoundStop (BYVAL snd AS INTEGER)
+        FUNCTION slSoundPlay& (BYVAL snd AS LONG)
+        FUNCTION slSoundLoop (BYVAL snd AS LONG)
+        SUB slSoundPause (BYVAL snd AS LONG)
+        SUB slSoundStop (BYVAL snd AS LONG)
         SUB slSoundPauseAll ()
         SUB slSoundResumeAll ()
         SUB slSoundStopAll ()
-        FUNCTION slSoundPlaying& (BYVAL snd AS INTEGER)
-        FUNCTION slSoundLooping& (BYVAL snd AS INTEGER)
+        FUNCTION slSoundPlaying& (BYVAL snd AS LONG)
+        FUNCTION slSoundLooping& (BYVAL snd AS LONG)
         'Shape Commands
         SUB slTriangleFill (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL w AS DOUBLE, BYVAL h AS DOUBLE)
         SUB slTriangleOutline (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL w AS DOUBLE, BYVAL h AS DOUBLE)
         SUB slRectangleFill (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL w AS DOUBLE, BYVAL h AS DOUBLE)
         SUB slRectangleOutline (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL w AS DOUBLE, BYVAL h AS DOUBLE)
-        SUB slCircleFill (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL rad AS DOUBLE, BYVAL vert AS INTEGER)
-        SUB slCircleOutline (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL rad AS DOUBLE, BYVAL vert AS INTEGER)
-        SUB slSemiCircleFill (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL rad AS DOUBLE, BYVAL num AS INTEGER, BYVAL deg AS DOUBLE)
-        SUB slSemiCircleOutline (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL rad AS DOUBLE, BYVAL num AS INTEGER, BYVAL deg AS DOUBLE)
+        SUB slCircleFill (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL rad AS DOUBLE, BYVAL vert AS LONG)
+        SUB slCircleOutline (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL rad AS DOUBLE, BYVAL vert AS LONG)
+        SUB slSemiCircleFill (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL rad AS DOUBLE, BYVAL num AS LONG, BYVAL deg AS DOUBLE)
+        SUB slSemiCircleOutline (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL rad AS DOUBLE, BYVAL num AS LONG, BYVAL deg AS DOUBLE)
         SUB slPoint (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE)
         SUB slLine (BYVAL x1 AS DOUBLE, BYVAL y1 AS DOUBLE, BYVAL x2 AS DOUBLE, BYVAL y2 AS DOUBLE)
         SUB slSetSpriteTiling (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE)
         SUB slSetSpriteScroll (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE)
-        SUB slSprite (BYVAL tex AS INTEGER, BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL w AS DOUBLE, BYVAL h AS DOUBLE)
+        SUB slSprite (BYVAL tex AS LONG, BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, BYVAL w AS DOUBLE, BYVAL h AS DOUBLE)
         'Text Commands
-        SUB slSetTextAlign (BYVAL align AS INTEGER)
+        SUB slSetTextAlign (BYVAL align AS LONG)
         FUNCTION slGetTextWidth& (text AS STRING)
         FUNCTION slGetTextHeight& (text AS STRING)
         FUNCTION slLoadFont& (filename AS STRING)
-        SUB slSetFont (BYVAL font AS INTEGER, BYVAL size AS INTEGER)
-        SUB slSetFontSize (BYVAL size AS INTEGER)
+        SUB slSetFont (BYVAL font AS LONG, BYVAL size AS LONG)
+        SUB slSetFontSize (BYVAL size AS LONG)
         SUB slText (BYVAL x AS DOUBLE, BYVAL y AS DOUBLE, text AS STRING)
 
     END DECLARE
