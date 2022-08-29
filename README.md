@@ -21,7 +21,7 @@ This software is provided as-is. There is no warranty for this software. You use
 ```VB
 REM $include: 'sigil.bi'
 
-CALL slWindow(640, 480, "Hello - Press arrow keys to change Backdrop color!", slFALSE)
+CALL slWindow(640, 480, "Hello - Press arrow keys to change Backdrop color!" + CHR$(0), slFALSE)
 
 DO
     slRender
@@ -67,7 +67,7 @@ REM $include: 'raylib42.bi'
 LET w = 800
 LET h = 600
 
-CALL InitWindow(w, h, "Hello")
+CALL InitWindow(w, h, "Hello" + CHR$(0))
 
 DIM SHARED Col AS fColor
 
